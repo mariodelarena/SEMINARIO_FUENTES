@@ -5,3 +5,6 @@ Altas_Hospitalarias
 str(Altas_Hospitalarias)
 summary(Altas_Hospitalarias)
 View(Altas_Hospitalarias)
+
+Calidad_Aire_Palma <- read_excel("INPUT/DATA/Calidad_Aire_Palma.xls")
+View(Calidad_Aire_Palma)
