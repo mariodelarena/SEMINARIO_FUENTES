@@ -8,3 +8,7 @@ View(Altas_Hospitalarias)
 
 Calidad_Aire_Palma <- read_excel("INPUT/DATA/Calidad_Aire_Palma.xls")
 View(Calidad_Aire_Palma)
+
+library(readr)
+Calidad_Aire_Gijon <- read_csv("INPUT/DATA/Calidad_Aire_Gijon.csv")
+View(Calidad_Aire_Gijon)
