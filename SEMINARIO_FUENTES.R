@@ -18,3 +18,7 @@ View(IGEAR_Calidad_del_aire_estac_ica_data)
 Calidad_Aire_Cantabria <- read_excel("INPUT/DATA/Calidad_Aire_Cantabria.xls")
 View(Calidad_Aire_Cantabria)
 
+#Hay que cambiar el nombre de las magnitudes
+Calidad_Aire_Madrid <- read_delim("INPUT/DATA/Calidad_Aire_Madrid.csv", 
+                                  delim = ";", escape_double = FALSE, trim_ws = TRUE)
+View(Calidad_Aire_Madrid)
