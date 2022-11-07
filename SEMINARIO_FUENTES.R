@@ -9,6 +9,9 @@ View(Calidad_Aire_Palma2020)
 
 library(readr)
 
+Calidad_Aire_Gijon <- read_delim("INPUT/DATA/Calidad_Aire_Gijon.csv", 
+                                 delim = ";", escape_double = FALSE, trim_ws = TRUE)
+View(Calidad_Aire_Gijon)
 
 Calidad_Aire_Aragon <- read_excel("INPUT/DATA/IGEAR Calidad del aire - estac_ica_data.xlsx")
 View(Calidad_Aire_Aragon)
