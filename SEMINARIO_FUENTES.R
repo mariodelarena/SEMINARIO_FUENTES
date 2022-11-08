@@ -23,7 +23,10 @@ Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria_Sin_Corte[286:297,]
 View(Calidad_Aire_Cantabria2020)
 
 #Hay que cambiar el nombre de las magnitudes
+library(dplyr)
 Calidad_Aire_Madrid <- read_delim("INPUT/DATA/Calidad_Aire_Madrid.csv", 
                                   delim = ";", escape_double = FALSE, trim_ws = TRUE)
 View(Calidad_Aire_Madrid)
-rename(.data = Calidad_Aire_Madrid, 1 = SO2, 6 = CO,7 = NO, 8 = NO2, 9 = PM2.5, 10 = PM10, 12 = NOx, 14 = O3, 20 = C7H8, 22 = Carbon_Negro, 30 = C6H6, 42 = CHtot, 44 = CHnoMet, 431 = MPX)
+Calidad_Aire_Madrid <- mutate(Calidad_Aire_Madrid, magnitud = case_when(magnitud == 1 ~ 'SO2',  magnitud == 6 ~ 'CO', magnitud == 7 ~ 'NO', magnitud == 8 ~ 'NO2', magnitud == 9 ~ 'PM2.5', magnitud == 10 ~ 'PM10', magnitud == 12 ~ 'NOx', magnitud == 14 ~ 'O3', magnitud == 20 ~ 'C7H8', magnitud == 22 ~ 'Carbon_Negro', magnitud == 30 ~ 'C6H6', magnitud == 42 ~ 'CHtot', magnitud == 44 ~ 'CHnoMet', magnitud == 431 ~ 'MPX'))
+                                 
+View(Calidad_Aire_Madrid)
