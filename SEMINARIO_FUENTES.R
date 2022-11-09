@@ -35,8 +35,17 @@ View(Calidad_Aire_Cantabria2020)
 #Tabla de la calidad del aire de Madrid con el nombre de las magnitudes correcto
 Calidad_Aire_Madrid <- read_delim("INPUT/DATA/Calidad_Aire_Madrid.csv", 
                                   delim = ";", escape_double = FALSE, trim_ws = TRUE)
-Calidad_Aire_Madrid <- mutate(Calidad_Aire_Madrid, magnitud = case_when(magnitud == 1 ~ 'SO2',  magnitud == 6 ~ 'CO', magnitud == 7 ~ 'NO', magnitud == 8 ~ 'NO2', magnitud == 9 ~ 'PM2.5', magnitud == 10 ~ 'PM10', magnitud == 12 ~ 'NOx', magnitud == 14 ~ 'O3', magnitud == 20 ~ 'C7H8', magnitud == 22 ~ 'Carbon_Negro', magnitud == 30 ~ 'C6H6', magnitud == 42 ~ 'CHtot', magnitud == 44 ~ 'CHnoMet', magnitud == 431 ~ 'MPX'))
-Calidad_Aire_Madrid <- Calidad_Aire_Madrid %>% select(-ano, -provincia, -municipio, -estacion, -punto_muestreo, -starts_with('v'))
-#Calidad_Aire_Madrid$horas <- apply(Calidad_Aire_Madrid[ ,c(4:27)], 1, mean, na.rm = TRUE)
+Calidad_Aire_Madrid <- 
+  mutate(Calidad_Aire_Madrid, magnitud = case_when(magnitud == 1 ~ 'SO2',  magnitud == 6 ~ 'CO', magnitud == 7 ~ 'NO', magnitud == 8 ~ 'NO2', magnitud == 9 ~ 'PM2.5', magnitud == 10 ~ 'PM10', magnitud == 12 ~ 'NOx', magnitud == 14 ~ 'O3', magnitud == 20 ~ 'C7H8', magnitud == 22 ~ 'Carbon_Negro', magnitud == 30 ~ 'C6H6', magnitud == 42 ~ 'CHtot', magnitud == 44 ~ 'CHnoMet', magnitud == 431 ~ 'MPX'))
+
+
+Calidad_Aire_Madrid <- 
+  Calidad_Aire_Madrid %>% 
+  select(-ano, -provincia, -municipio, -estacion, -punto_muestreo, -starts_with('v'))
+
+across()
+
+Calidad_Aire_Madrid$horas <- 
+  apply(Calidad_Aire_Madrid[ ,c(4:27)], 1, mean, na.rm = TRUE)
 
 View(Calidad_Aire_Madrid)
