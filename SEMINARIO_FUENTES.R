@@ -6,6 +6,11 @@ library(dplyr)
 Altas_Hospitalarias <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
 Altas_Hospitalarias <- Altas_Hospitalarias[6:459, ]
 Altas_Hospitalarias <- Altas_Hospitalarias %>% select(1, 12, 16, 17, 21)
+
+Altas_Hospitalarias_Madrid <- read_excel("INPUT/DATA/Altas_Hospitalarias_Madrid.xls", 
+                                         sheet = "I.1.2")
+Altas_Hospitalarias_Madrid <- Altas_Hospitalarias_Madrid[19:30, 1:2]
+View(Altas_Hospitalarias_Madrid)
 View(Altas_Hospitalarias)
 
 #Tabla de la calidad del aire de la Palma
