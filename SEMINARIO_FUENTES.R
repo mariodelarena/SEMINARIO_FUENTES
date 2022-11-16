@@ -4,7 +4,7 @@ library(dplyr)
 
 #Tabla de altas Hospitalarias
 Altas_Hospitalarias <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
-Altas_Hospitalarias <- Altas_Hospitalarias[6:459, ]
+Altas_Hospitalarias <- Altas_Hospitalarias[6:157, ]
 Altas_Hospitalarias <- Altas_Hospitalarias %>% select(1, 12, 16, 17, 21)
 
 Altas_Hospitalarias_Madrid <- read_excel("INPUT/DATA/Altas_Hospitalarias_Madrid.xls", 
