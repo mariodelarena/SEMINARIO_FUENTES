@@ -11,6 +11,7 @@ Altas_Hospitalarias_Madrid <- read_excel("INPUT/DATA/Altas_Hospitalarias_Madrid.
                                          sheet = "I.1.2")
 Altas_Hospitalarias_Madrid <- Altas_Hospitalarias_Madrid[19:30, 1:2]
 View(Altas_Hospitalarias_Madrid)
+#Añadir una columna a altas hospitalarias con los datos de Madrid.
 View(Altas_Hospitalarias)
 
 #Tabla de la calidad del aire de la Palma
