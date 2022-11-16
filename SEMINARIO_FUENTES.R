@@ -2,7 +2,7 @@ library(readxl)
 library(readr)
 library(dplyr)
 
-#Tabla de altas Hospitalarias
+#Tabla de Altas Hospitalarias
 Altas_Hospitalarias_Espana <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[6:157, ]
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana %>% select(1, 12, 16, 17, 21)
@@ -10,20 +10,16 @@ Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(1,2,3,4,12,26,29,32,3
 Altas_Hospitalarias_Espana <- rename(.data = Altas_Hospitalarias_Espana, Aragón = ...12, Asturias = ...16, Baleares = ...17, Cantabria = ...21 )
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(12:21),]
 
-
+#Tabla de Altas Hospitalarias de Madrid
 Altas_Hospitalarias_Madrid <- read_excel("INPUT/DATA/Altas_Hospitalarias_Madrid.xls", 
                                          sheet = "I.1.2")
 Altas_Hospitalarias_Madrid <- Altas_Hospitalarias_Madrid[19:28, 1:2]
 Altas_Hospitalarias_Madrid <- rename(.data = Altas_Hospitalarias_Madrid, Madrid = "9187" )
-
 View(Altas_Hospitalarias_Madrid)
 
-
+#Tabla con las Altas Hospitalarias + Madrid
 Altas_Hospitalarias_Espana[, 6] <- Altas_Hospitalarias_Madrid[,2]
-
 View(Altas_Hospitalarias_Espana)
-
-
 
 
 #Tabla de la calidad del aire de la Palma
@@ -55,7 +51,6 @@ Calidad_Aire_Madrid <- read_delim("INPUT/DATA/Calidad_Aire_Madrid.csv",
                                   delim = ";", escape_double = FALSE, trim_ws = TRUE)
 Calidad_Aire_Madrid <- 
   mutate(Calidad_Aire_Madrid, magnitud = case_when(magnitud == 1 ~ 'SO2',  magnitud == 6 ~ 'CO', magnitud == 7 ~ 'NO', magnitud == 8 ~ 'NO2', magnitud == 9 ~ 'PM2.5', magnitud == 10 ~ 'PM10', magnitud == 12 ~ 'NOx', magnitud == 14 ~ 'O3', magnitud == 20 ~ 'C7H8', magnitud == 22 ~ 'Carbon_Negro', magnitud == 30 ~ 'C6H6', magnitud == 42 ~ 'CHtot', magnitud == 44 ~ 'CHnoMet', magnitud == 431 ~ 'MPX'))
-
 
 Calidad_Aire_Madrid <- 
   Calidad_Aire_Madrid %>% 
