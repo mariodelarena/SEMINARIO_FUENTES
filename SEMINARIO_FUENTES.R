@@ -3,16 +3,28 @@ library(readr)
 library(dplyr)
 
 #Tabla de altas Hospitalarias
-Altas_Hospitalarias <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
-Altas_Hospitalarias <- Altas_Hospitalarias[6:157, ]
-Altas_Hospitalarias <- Altas_Hospitalarias %>% select(1, 12, 16, 17, 21)
+Altas_Hospitalarias_Espana <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
+Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[6:157, ]
+Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana %>% select(1, 12, 16, 17, 21)
+Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(1,2,3,4,12,26,29,32,39,45,48,49,61,70,91,95,106,117,126,129,130,135,152 ),]
+Altas_Hospitalarias_Espana <- rename(.data = Altas_Hospitalarias_Espana, Aragón = ...12, Asturias = ...16, Baleares = ...17, Cantabria = ...21 )
+Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(12:21),]
+
 
 Altas_Hospitalarias_Madrid <- read_excel("INPUT/DATA/Altas_Hospitalarias_Madrid.xls", 
                                          sheet = "I.1.2")
-Altas_Hospitalarias_Madrid <- Altas_Hospitalarias_Madrid[19:30, 1:2]
+Altas_Hospitalarias_Madrid <- Altas_Hospitalarias_Madrid[19:28, 1:2]
+Altas_Hospitalarias_Madrid <- rename(.data = Altas_Hospitalarias_Madrid, Madrid = "9187" )
+
 View(Altas_Hospitalarias_Madrid)
-#Añadir una columna a altas hospitalarias con los datos de Madrid.
-View(Altas_Hospitalarias)
+
+
+Altas_Hospitalarias_Espana[, 6] <- Altas_Hospitalarias_Madrid[,2]
+
+View(Altas_Hospitalarias_Espana)
+
+
+
 
 #Tabla de la calidad del aire de la Palma
 Calidad_Aire_Palma2020 <- read_excel("INPUT/DATA/Calidad_Aire_Palma.xls")
