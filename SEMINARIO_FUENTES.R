@@ -24,19 +24,22 @@ View(Altas_Hospitalarias_Espana)
 
 #Tabla de la calidad del aire de la Palma
 Calidad_Aire_Palma2020 <- read_excel("INPUT/DATA/Calidad_Aire_Palma.xls")
-Calidad_Aire_Palma2020 <- Calidad_Aire_Palma2020 %>% select(-PERIODO_HI, -starts_with('FL'))
+Calidad_Aire_Palma2020 <- Calidad_Aire_Palma2020 %>% 
+  select(-PERIODO_HI, -starts_with('FL')) %>%
+  group_by(FECHA_HI) %>%
+  summarise(across(c(SO2_HI, NO_HI, NO2_HI, O3_HI, PM10_HI, DD_HI, VV_HI, TMP_HI, HR_HI, RS_HI, PRB_HI, LL_HI), ~ mean(.x, na.rm = TRUE)))
 
 View(Calidad_Aire_Palma2020)
 
 #Tabla de la calidad del aire de Gijón
 Calidad_Aire_Gijon <- read_delim("INPUT/DATA/Calidad_Aire_Gijon.csv", 
                                  delim = ";", escape_double = FALSE, trim_ws = TRUE)
-Calidad_Aire_Gijon <- Calidad_Aire_Gijon %>% select(-Estacion, -Titulo, -latitud, -longitud, -Periodo)
+Calidad_Aire_Gijon <- Calidad_Aire_Gijon %>% select(-Estacion, -Titulo, -latitud, -longitud, -Periodo) 
 
 View(Calidad_Aire_Gijon)
 
 #Tabla de la calidad del aire de Aragón
-Calidad_Aire_Aragon <- read_excel("INPUT/DATA/IGEAR Calidad del aire - estac_ica_data.xlsx")
+Calidad_Aire_Aragon <- read_excel("INPUT/DATA/Calidad_aire_Aragon.xlsx")
 Calidad_Aire_Aragon <- Calidad_Aire_Aragon %>% select(-id, -dato_medido, -dato_medido_mm)
 
 View(Calidad_Aire_Aragon)
@@ -56,7 +59,7 @@ Calidad_Aire_Madrid <-
   Calidad_Aire_Madrid %>% 
   select(-ano, -provincia, -municipio, -estacion, -punto_muestreo, -starts_with('v'))
 
-across()
+#Calidad_Aire_Madrid <- sumarise(across(where(starts_with("h")), ~ mean(.x, na.rm = TRUE)))
 
 Calidad_Aire_Madrid$horas <- 
   apply(Calidad_Aire_Madrid[ ,c(4:27)], 1, mean, na.rm = TRUE)
