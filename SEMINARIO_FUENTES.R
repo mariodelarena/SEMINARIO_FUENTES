@@ -26,8 +26,10 @@ View(Altas_Hospitalarias_Espana)
 Calidad_Aire_Palma2020 <- read_excel("INPUT/DATA/Calidad_Aire_Palma.xls")
 Calidad_Aire_Palma2020 <- Calidad_Aire_Palma2020 %>% 
   select(-PERIODO_HI, -starts_with('FL')) %>%
-  group_by(FECHA_HI) %>%
   summarise(across(c(SO2_HI, NO_HI, NO2_HI, O3_HI, PM10_HI, DD_HI, VV_HI, TMP_HI, HR_HI, RS_HI, PRB_HI, LL_HI), ~ mean(.x, na.rm = TRUE)))
+
+Calidad_Aire_Palma2020 <- as.data.frame(Calidad_Aire_Palma2020)
+row.names(Calidad_Aire_Palma2020) <- c("Palma")
 
 View(Calidad_Aire_Palma2020)
 
