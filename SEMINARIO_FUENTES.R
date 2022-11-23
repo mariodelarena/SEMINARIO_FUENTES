@@ -36,8 +36,11 @@ View(Calidad_Aire_Palma2020)
 #Tabla de la calidad del aire de Gijón
 Calidad_Aire_Gijon <- read_delim("INPUT/DATA/Calidad_Aire_Gijon.csv", 
                                  delim = ";", escape_double = FALSE, trim_ws = TRUE)
-Calidad_Aire_Gijon <- Calidad_Aire_Gijon %>% select(-Estacion, -Titulo, -latitud, -longitud, -Periodo) 
+Calidad_Aire_Gijon <- Calidad_Aire_Gijon %>% select(-Estacion, -Titulo, -latitud, -longitud, -Periodo)%>%
+  summarise(across(c(SO2, NO, NO2, O3, PM10, dd, vv, TMP, HR, RS, PRB, LL, BEN, TOL, MXIL, PM25), ~ mean(.x, na.rm = TRUE)))
 
+Calidad_Aire_Gijon <- as.data.frame(Calidad_Aire_Gijon)
+row.names(Calidad_Aire_Gijon) <- c("Gijón")
 View(Calidad_Aire_Gijon)
 
 #Tabla de la calidad del aire de Aragón
