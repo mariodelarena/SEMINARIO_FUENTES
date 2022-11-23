@@ -51,7 +51,10 @@ View(Calidad_Aire_Aragon)
 
 #Tabla de la calidad del aire de Cantabria ya editada
 Calidad_Aire_Cantabria_Sin_Corte <- read_excel("INPUT/DATA/Calidad_Aire_Cantabria.xls")
-Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria_Sin_Corte[286:297,]
+Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria_Sin_Corte[285,]
+# Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria2020 %>%
+#  summarise(across(c(`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, ...8, ...14, ...20, ...26, ...32, ...38, ...44), ~ mean(.x, na.rm = TRUE)))
+
 View(Calidad_Aire_Cantabria2020)
 
 #Tabla de la calidad del aire de Madrid con el nombre de las magnitudes correcto
