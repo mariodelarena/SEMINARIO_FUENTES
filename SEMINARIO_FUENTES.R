@@ -11,6 +11,7 @@ Altas_Hospitalarias_Espana <- rename(.data = Altas_Hospitalarias_Espana, Aragón
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(12:21),]
 
 #Tabla de Altas Hospitalarias de Madrid
+# Hay que quitar este Madrid y poner el que aparece ya en la tabla de altas hospitalarias
 Altas_Hospitalarias_Madrid <- read_excel("INPUT/DATA/Altas_Hospitalarias_Madrid.xls", 
                                          sheet = "I.1.2")
 Altas_Hospitalarias_Madrid <- Altas_Hospitalarias_Madrid[19:28, 1:2]
