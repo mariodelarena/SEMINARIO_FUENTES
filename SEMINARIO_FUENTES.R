@@ -44,12 +44,6 @@ Calidad_Aire_Gijon <- as.data.frame(Calidad_Aire_Gijon)
 row.names(Calidad_Aire_Gijon) <- c("Gijón")
 View(Calidad_Aire_Gijon)
 
-#Tabla de la calidad del aire de Aragón
-Calidad_Aire_Aragon <- read_excel("INPUT/DATA/Calidad_aire_Aragon.xlsx")
-Calidad_Aire_Aragon <- Calidad_Aire_Aragon %>% select(-id, -dato_medido, -dato_medido_mm)
-
-View(Calidad_Aire_Aragon)
-
 #Tabla de la calidad del aire de Cantabria ya editada
 Calidad_Aire_Cantabria_Sin_Corte <- read_excel("INPUT/DATA/Calidad_Aire_Cantabria.xls")
 Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria_Sin_Corte[285,]
