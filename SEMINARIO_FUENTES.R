@@ -59,12 +59,15 @@ Calidad_Aire_Madrid <-
   mutate(Calidad_Aire_Madrid, magnitud = case_when(magnitud == 1 ~ 'SO2',  magnitud == 6 ~ 'CO', magnitud == 7 ~ 'NO', magnitud == 8 ~ 'NO2', magnitud == 9 ~ 'PM2.5', magnitud == 10 ~ 'PM10', magnitud == 12 ~ 'NOx', magnitud == 14 ~ 'O3', magnitud == 20 ~ 'C7H8', magnitud == 22 ~ 'Carbon_Negro', magnitud == 30 ~ 'C6H6', magnitud == 42 ~ 'CHtot', magnitud == 44 ~ 'CHnoMet', magnitud == 431 ~ 'MPX'))
 
 Calidad_Aire_Madrid <- 
-  Calidad_Aire_Madrid %>% 
-  select(-ano, -provincia, -municipio, -estacion, -punto_muestreo, -starts_with('v'))
+  Calidad_Aire_Madrid %>%
+  group_by(magnitud, mes) %>%
+  select(-ano, -provincia, -municipio, -estacion, -punto_muestreo, -starts_with('v'))%>%
+  summarise(across(c(h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24), ~ mean(.x, na.rm = TRUE)))
+
+View(Calidad_Aire_Madrid)
+
 
 #Calidad_Aire_Madrid <- sumarise(across(where(starts_with("h")), ~ mean(.x, na.rm = TRUE)))
 
-Calidad_Aire_Madrid$horas <- 
-  apply(Calidad_Aire_Madrid[ ,c(4:27)], 1, mean, na.rm = TRUE)
 
-View(Calidad_Aire_Madrid)
+
