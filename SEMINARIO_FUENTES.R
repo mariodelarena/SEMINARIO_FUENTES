@@ -48,12 +48,14 @@ View(Calidad_Aire_Gijon)
 Calidad_Aire_Cantabria_Sin_Corte <- read_excel("INPUT/DATA/Calidad_Aire_Cantabria.xls")
 Calidad_Aire_Cantabria2020 <-   Calidad_Aire_Cantabria_Sin_Corte[285, 2:67]
 
-# mean(c(Calidad_Aire_Cantabria2020$`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, Calidad_Aire_Cantabria2020$...8), na.rm = TRUE)
+typeof(Calidad_Aire_Cantabria2020)
+tapply(Calidad_Aire_Cantabria2020$`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, Calidad_Aire_Cantabria2020$...8, mean)
+Calidad_Aire_Cantabria2020[ , 1:66] <- as.data.frame(apply(Calidad_Aire_Cantabria2020[ , 1: 66], 2, as.numeric))
+sapply(Calidad_Aire_Cantabria2020, class)
 
-# Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria2020 %>%
-  # summarise(across(c(`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, ...8, ...14, ...20, ...26, ...32, ...38, ...44, ...50, ...56, ...62), ~ mean(.x, na.rm = TRUE))
-chars <- sapply(Calidad_Aire_Cantabria2020, is.character)
-Calidad_Aire_Cantabria2020[, chars] <- as.data.frame(apply(Calidad_Aire_Cantabria2020[, chars], 2, as.numeric))
+
+
+
 row.names(Calidad_Aire_Cantabria2020) <- c("Cantabria")
 
 View(Calidad_Aire_Cantabria2020)
