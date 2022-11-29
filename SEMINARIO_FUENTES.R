@@ -5,9 +5,9 @@ library(dplyr)
 #Tabla de Altas Hospitalarias
 Altas_Hospitalarias_Espana <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[6:157, ]
-Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana %>% select(1, 12, 16, 17, 21)
+Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana %>% select(1, 16, 17, 21)
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(1,2,3,4,12,26,29,32,39,45,48,49,61,70,91,95,106,117,126,129,130,135,152 ),]
-Altas_Hospitalarias_Espana <- rename(.data = Altas_Hospitalarias_Espana, Aragón = ...12, Asturias = ...16, Baleares = ...17, Cantabria = ...21 )
+Altas_Hospitalarias_Espana <- rename(.data = Altas_Hospitalarias_Espana, Asturias = ...16, Baleares = ...17, Cantabria = ...21 )
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(12:21),]
 
 #Tabla de Altas Hospitalarias de Madrid
@@ -19,7 +19,7 @@ Altas_Hospitalarias_Madrid <- rename(.data = Altas_Hospitalarias_Madrid, Madrid 
 View(Altas_Hospitalarias_Madrid)
 
 #Tabla con las Altas Hospitalarias + Madrid
-Altas_Hospitalarias_Espana[, 6] <- Altas_Hospitalarias_Madrid[,2]
+Altas_Hospitalarias_Espana[, 5] <- Altas_Hospitalarias_Madrid[,2]
 View(Altas_Hospitalarias_Espana)
 
 
@@ -46,9 +46,9 @@ View(Calidad_Aire_Gijon)
 
 #Tabla de la calidad del aire de Cantabria ya editada
 Calidad_Aire_Cantabria_Sin_Corte <- read_excel("INPUT/DATA/Calidad_Aire_Cantabria.xls")
-Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria_Sin_Corte[285,]
-# Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria2020 %>%
-#  summarise(across(c(`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, ...8, ...14, ...20, ...26, ...32, ...38, ...44), ~ mean(.x, na.rm = TRUE)))
+Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria_Sin_Corte[285, 2:67]
+
+row.names(Calidad_Aire_Cantabria2020) <- c("Cantabria")
 
 View(Calidad_Aire_Cantabria2020)
 
