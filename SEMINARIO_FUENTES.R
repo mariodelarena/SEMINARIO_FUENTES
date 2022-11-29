@@ -73,8 +73,18 @@ Calidad_Aire_Madrid <-
 
 View(Calidad_Aire_Madrid)
 
-
 #Calidad_Aire_Madrid <- sumarise(across(where(starts_with("h")), ~ mean(.x, na.rm = TRUE)))
 
 
+#Tabla de la calidad del aire de Valencia
+Calidad_Aire_Valencia_sin_Corte <- read_delim("INPUT/DATA/Calidad_Aire_Valencia.csv", 
+                                    delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+Calidad_Aire_Valencia <- Calidad_Aire_Valencia_sin_Corte[31700:34993,6:19]
+  
+Calidad_Aire_Valencia <- Calidad_Aire_Valencia %>%
+  select(-Ruido)%>%
+  summarise(across(c(PM1, PM2.5, PM10, NO, NO2, NOx, O3, SO2, CO, NH3, C7H8, C6H6, C8H10), ~ mean(.x, na.rm = TRUE)))
+
+View(Calidad_Aire_Valencia)
 
