@@ -5,7 +5,7 @@ library(dplyr)
 #Tabla de Altas Hospitalarias
 Altas_Hospitalarias_Espana <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[6:157, ]
-Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana %>% select(1, 16, 17, 21)
+Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana %>% select(1, 16, 17, 21, 46, 55)
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(1,2,3,4,12,26,29,32,39,45,48,49,61,70,91,95,106,117,126,129,130,135,152 ),]
 Altas_Hospitalarias_Espana <- rename(.data = Altas_Hospitalarias_Espana, Asturias = ...16, Baleares = ...17, Cantabria = ...21 )
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(12:21),]
@@ -51,9 +51,9 @@ Calidad_Aire_Cantabria2020 <-   Calidad_Aire_Cantabria_Sin_Corte[285, 2:67]
 # mean(c(Calidad_Aire_Cantabria2020$`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, Calidad_Aire_Cantabria2020$...8), na.rm = TRUE)
 
 # Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria2020 %>%
-  # summarise(across(c(`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, ...8, ...14, ...20, ...26, ...32, ...38, ...44, ...50, ...56, ...62), ~ mean(.x, na.rm = TRUE)))
-mean(c(8, 23, 4, NA, 9, NA, NA), na.rm = TRUE)
-
+  # summarise(across(c(`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, ...8, ...14, ...20, ...26, ...32, ...38, ...44, ...50, ...56, ...62), ~ mean(.x, na.rm = TRUE))
+chars <- sapply(Calidad_Aire_Cantabria2020, is.character)
+Calidad_Aire_Cantabria2020[, chars] <- as.data.frame(apply(Calidad_Aire_Cantabria2020[, chars], 2, as.numeric))
 row.names(Calidad_Aire_Cantabria2020) <- c("Cantabria")
 
 View(Calidad_Aire_Cantabria2020)
