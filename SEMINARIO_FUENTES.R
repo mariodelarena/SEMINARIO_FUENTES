@@ -18,6 +18,7 @@ Calidad_Aire_Palma2020 <- read_excel("INPUT/DATA/Calidad_Aire_Palma.xls")
 Calidad_Aire_Palma2020 <- Calidad_Aire_Palma2020 %>% 
   select(-PERIODO_HI, -starts_with('FL')) %>%
   summarise(across(c(SO2_HI, NO_HI, NO2_HI, O3_HI, PM10_HI, DD_HI, VV_HI, TMP_HI, HR_HI, RS_HI, PRB_HI, LL_HI), ~ mean(.x, na.rm = TRUE)))
+Calidad_Aire_Palma2020 <- rename(.data = Calidad_Aire_Palma2020, SO2 = SO2_HI, NO = NO_HI, NO2 = NO2_HI, O3 = O3_HI, PM10 = PM10_HI, DD = DD_HI, VV = VV_HI, TMP = TMP_HI, HR = HR_HI, RS = RS_HI, PBR = PRB_HI, LL = LL_HI)
 
 Calidad_Aire_Palma2020 <- as.data.frame(Calidad_Aire_Palma2020)
 row.names(Calidad_Aire_Palma2020) <- c("Palma")
