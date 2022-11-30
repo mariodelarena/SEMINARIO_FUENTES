@@ -42,8 +42,7 @@ Calidad_Aire_Cantabria2020 <-   Calidad_Aire_Cantabria_Sin_Corte[285, 2:67]
 num <- as.numeric(unlist(Calidad_Aire_Cantabria2020))
 
 typeof(Calidad_Aire_Cantabria2020)
-tapply(Calidad_Aire_Cantabria2020$`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, Calidad_Aire_Cantabria2020$...8, mean)
-Calidad_Aire_Cantabria2020[ , 1:66] <- as.data.frame(apply(Calidad_Aire_Cantabria2020[ , 1: 66], 2, as.numeric))
+
 sapply(Calidad_Aire_Cantabria2020, class)
 
 
@@ -81,5 +80,7 @@ Calidad_Aire_Valencia <- Calidad_Aire_Valencia %>%
   select(-Ruido)%>%
   summarise(across(c(PM1, PM2.5, PM10, NO, NO2, NOx, O3, SO2, CO, NH3, C7H8, C6H6, C8H10), ~ mean(.x, na.rm = TRUE)))
 
+Calidad_Aire_Valencia <- as.data.frame(Calidad_Aire_Valencia)
+row.names(Calidad_Aire_Valencia) <- c("Valencia")
 View(Calidad_Aire_Valencia)
 
