@@ -42,12 +42,10 @@ Calidad_Aire_Cantabria2020 <-   Calidad_Aire_Cantabria_Sin_Corte[285, 2:67]
 Calidad_Aire_Cantabria2020$PM10 <- mean(as.numeric(c(Calidad_Aire_Cantabria2020$`Territorio y Medio ambiente -> Medio ambiente -> Calidad del Aire`, Calidad_Aire_Cantabria2020$...8, Calidad_Aire_Cantabria2020$...14,Calidad_Aire_Cantabria2020$...20, Calidad_Aire_Cantabria2020$...26, Calidad_Aire_Cantabria2020$...32, Calidad_Aire_Cantabria2020$...38, Calidad_Aire_Cantabria2020$...44, Calidad_Aire_Cantabria2020$...50, Calidad_Aire_Cantabria2020$...56, Calidad_Aire_Cantabria2020$...62)), na.rm = TRUE)
 
 Calidad_Aire_Cantabria2020$SO2 <- mean(as.numeric(c(Calidad_Aire_Cantabria2020$...3, Calidad_Aire_Cantabria2020$...9, Calidad_Aire_Cantabria2020$...15,Calidad_Aire_Cantabria2020$...21, Calidad_Aire_Cantabria2020$...27, Calidad_Aire_Cantabria2020$...33, Calidad_Aire_Cantabria2020$...39, Calidad_Aire_Cantabria2020$...45, Calidad_Aire_Cantabria2020$...51, Calidad_Aire_Cantabria2020$...57, Calidad_Aire_Cantabria2020$...63)), na.rm = TRUE)
-numeric_list <- as.numeric(Calidad_Aire_Cantabria2020)
 
 Calidad_Aire_Cantabria2020$NO2 <- mean(as.numeric(c(Calidad_Aire_Cantabria2020$...4, Calidad_Aire_Cantabria2020$...10, Calidad_Aire_Cantabria2020$...16,Calidad_Aire_Cantabria2020$...22, Calidad_Aire_Cantabria2020$...28, Calidad_Aire_Cantabria2020$...34, Calidad_Aire_Cantabria2020$...40, Calidad_Aire_Cantabria2020$...46, Calidad_Aire_Cantabria2020$...52, Calidad_Aire_Cantabria2020$...58, Calidad_Aire_Cantabria2020$...64)), na.rm = TRUE)
 
 Calidad_Aire_Cantabria2020$NO <- mean(as.numeric(c(Calidad_Aire_Cantabria2020$...5, Calidad_Aire_Cantabria2020$...11, Calidad_Aire_Cantabria2020$...17,Calidad_Aire_Cantabria2020$...23, Calidad_Aire_Cantabria2020$...29, Calidad_Aire_Cantabria2020$...35, Calidad_Aire_Cantabria2020$...41, Calidad_Aire_Cantabria2020$...47, Calidad_Aire_Cantabria2020$...53, Calidad_Aire_Cantabria2020$...59, Calidad_Aire_Cantabria2020$...65)), na.rm = TRUE)
-Calidad_Aire_Cantabria2020 <- numeric_list
 
 Calidad_Aire_Cantabria2020$CO <- mean(as.numeric(c(Calidad_Aire_Cantabria2020$...6, Calidad_Aire_Cantabria2020$...12, Calidad_Aire_Cantabria2020$...18,Calidad_Aire_Cantabria2020$...24, Calidad_Aire_Cantabria2020$...30, Calidad_Aire_Cantabria2020$...36, Calidad_Aire_Cantabria2020$...42, Calidad_Aire_Cantabria2020$...48, Calidad_Aire_Cantabria2020$...54, Calidad_Aire_Cantabria2020$...60, Calidad_Aire_Cantabria2020$...66)), na.rm = TRUE)
 
@@ -64,15 +62,15 @@ View(Calidad_Aire_Cantabria2020)
 #Tabla de la calidad del aire de Madrid con el nombre de las magnitudes correcto
 Calidad_Aire_Madrid <- read_delim("INPUT/DATA/Calidad_Aire_Madrid.csv", 
                                   delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
 Calidad_Aire_Madrid <- 
   mutate(Calidad_Aire_Madrid, magnitud = case_when(magnitud == 1 ~ 'SO2',  magnitud == 6 ~ 'CO', magnitud == 7 ~ 'NO', magnitud == 8 ~ 'NO2', magnitud == 9 ~ 'PM2.5', magnitud == 10 ~ 'PM10', magnitud == 12 ~ 'NOx', magnitud == 14 ~ 'O3', magnitud == 20 ~ 'C7H8', magnitud == 22 ~ 'Carbon_Negro', magnitud == 30 ~ 'C6H6', magnitud == 42 ~ 'CHtot', magnitud == 44 ~ 'CHnoMet', magnitud == 431 ~ 'MPX'))
 
+Calidad_Aire_Madrid <- Calidad_Aire_Madrid %>%
+  select(magnitud, starts_with("h"))
 
-Calidad_Aire_Madrid <- 
-  Calidad_Aire_Madrid %>%
-  group_by(magnitud, mes) %>%
-  select(-ano, -provincia, -municipio, -estacion, -punto_muestreo, -starts_with('v'))%>%
-  summarise(across(c(h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24), ~ mean(.x, na.rm = TRUE)))
+Calidad_Aire_Madrid <- Calidad_Aire_Madrid %>%
+  summarise(across(c(h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24), ~ .x, na.rm = TRUE))
 
 View(Calidad_Aire_Madrid)
 
