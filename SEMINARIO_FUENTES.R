@@ -39,8 +39,6 @@ Calidad_Aire_Cantabria_Sin_Corte <- read_excel("INPUT/DATA/Calidad_Aire_Cantabri
 Calidad_Aire_Cantabria2020 <-   Calidad_Aire_Cantabria_Sin_Corte[285, 2:67]
 
 
-num <- as.numeric(unlist(Calidad_Aire_Cantabria2020))
-
 typeof(Calidad_Aire_Cantabria2020)
 
 sapply(Calidad_Aire_Cantabria2020, class)
