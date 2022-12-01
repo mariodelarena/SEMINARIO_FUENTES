@@ -70,9 +70,25 @@ Calidad_Aire_Madrid <- Calidad_Aire_Madrid %>%
   select(magnitud, starts_with("h"))
 
 Calidad_Aire_Madrid <- Calidad_Aire_Madrid %>%
-  summarise(across(c(h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24), ~ .x, na.rm = TRUE))
+  group_by(magnitud) %>%
+  summarise(across(c(h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24), ~ mean(.x, na.rm = TRUE)))
+
 
 View(Calidad_Aire_Madrid)
+
+
+Calidad_Aire_Madrid_Ajustado <- data.frame(
+  C6H6 = mean(c(Calidad_Aire_Madrid[1, ]$h01, Calidad_Aire_Madrid[1, ]$h02, Calidad_Aire_Madrid[1, ]$h03, Calidad_Aire_Madrid[1, ]$h04, Calidad_Aire_Madrid[1, ]$h05, Calidad_Aire_Madrid[1, ]$h06, Calidad_Aire_Madrid[1, ]$h07, Calidad_Aire_Madrid[1, ]$h08, Calidad_Aire_Madrid[1, ]$h09, Calidad_Aire_Madrid[1, ]$h10, Calidad_Aire_Madrid[1, ]$h11, Calidad_Aire_Madrid[1, ]$h12, Calidad_Aire_Madrid[1, ]$h13, Calidad_Aire_Madrid[1, ]$h14, Calidad_Aire_Madrid[1, ]$h15, Calidad_Aire_Madrid[1, ]$h16, Calidad_Aire_Madrid[1, ]$h17, Calidad_Aire_Madrid[1, ]$h18, Calidad_Aire_Madrid[1, ]$h19, Calidad_Aire_Madrid[1, ]$h20, Calidad_Aire_Madrid[1, ]$h21, Calidad_Aire_Madrid[1, ]$h22, Calidad_Aire_Madrid[1, ]$h23, Calidad_Aire_Madrid[1, ]$h24), na.rm = TRUE),
+
+  C7H8 = mean(c(Calidad_Aire_Madrid[2, ]$h01, Calidad_Aire_Madrid[2, ]$h02, Calidad_Aire_Madrid[2, ]$h03, Calidad_Aire_Madrid[2, ]$h04, Calidad_Aire_Madrid[2, ]$h05, Calidad_Aire_Madrid[2, ]$h06, Calidad_Aire_Madrid[2, ]$h07, Calidad_Aire_Madrid[2, ]$h08, Calidad_Aire_Madrid[2, ]$h09, Calidad_Aire_Madrid[2, ]$h10, Calidad_Aire_Madrid[2, ]$h11, Calidad_Aire_Madrid[2, ]$h12, Calidad_Aire_Madrid[2, ]$h13, Calidad_Aire_Madrid[2, ]$h14, Calidad_Aire_Madrid[2, ]$h15, Calidad_Aire_Madrid[2, ]$h16, Calidad_Aire_Madrid[2, ]$h17, Calidad_Aire_Madrid[2, ]$h18, Calidad_Aire_Madrid[2, ]$h19, Calidad_Aire_Madrid[2, ]$h20, Calidad_Aire_Madrid[2, ]$h21, Calidad_Aire_Madrid[2, ]$h22, Calidad_Aire_Madrid[2, ]$h23, Calidad_Aire_Madrid[2, ]$h24), na.rm = TRUE),
+
+  CHnoMet = mean(c(Calidad_Aire_Madrid[3, ]$h01, Calidad_Aire_Madrid[3, ]$h02, Calidad_Aire_Madrid[3, ]$h03, Calidad_Aire_Madrid[3, ]$h04, Calidad_Aire_Madrid[3, ]$h05, Calidad_Aire_Madrid[3, ]$h06, Calidad_Aire_Madrid[3, ]$h07, Calidad_Aire_Madrid[3, ]$h08, Calidad_Aire_Madrid[3, ]$h09, Calidad_Aire_Madrid[3, ]$h10, Calidad_Aire_Madrid[3, ]$h11, Calidad_Aire_Madrid[3, ]$h12, Calidad_Aire_Madrid[3, ]$h13, Calidad_Aire_Madrid[3, ]$h14, Calidad_Aire_Madrid[3, ]$h15, Calidad_Aire_Madrid[3, ]$h16, Calidad_Aire_Madrid[3, ]$h17, Calidad_Aire_Madrid[3, ]$h18, Calidad_Aire_Madrid[3, ]$h19, Calidad_Aire_Madrid[3, ]$h20, Calidad_Aire_Madrid[3, ]$h21, Calidad_Aire_Madrid[3, ]$h22, Calidad_Aire_Madrid[3, ]$h23, Calidad_Aire_Madrid[3, ]$h24), na.rm = TRUE),
+  
+  CHtot = mean(c(Calidad_Aire_Madrid[4, ]$h01, Calidad_Aire_Madrid[4, ]$h02, Calidad_Aire_Madrid[4, ]$h03, Calidad_Aire_Madrid[4, ]$h04, Calidad_Aire_Madrid[4, ]$h05, Calidad_Aire_Madrid[4, ]$h06, Calidad_Aire_Madrid[4, ]$h07, Calidad_Aire_Madrid[4, ]$h08, Calidad_Aire_Madrid[4, ]$h09, Calidad_Aire_Madrid[4, ]$h10, Calidad_Aire_Madrid[4, ]$h11, Calidad_Aire_Madrid[4, ]$h12, Calidad_Aire_Madrid[4, ]$h13, Calidad_Aire_Madrid[4, ]$h14, Calidad_Aire_Madrid[4, ]$h15, Calidad_Aire_Madrid[4, ]$h16, Calidad_Aire_Madrid[4, ]$h17, Calidad_Aire_Madrid[4, ]$h18, Calidad_Aire_Madrid[4, ]$h19, Calidad_Aire_Madrid[4, ]$h20, Calidad_Aire_Madrid[4, ]$h21, Calidad_Aire_Madrid[4, ]$h22, Calidad_Aire_Madrid[4, ]$h23, Calidad_Aire_Madrid[4, ]$h24), na.rm = TRUE))
+
+  
+
+View(Calidad_Aire_Madrid_Ajustado)
 
 #Calidad_Aire_Madrid <- sumarise(across(where(starts_with("h")), ~ mean(.x, na.rm = TRUE)))
 
