@@ -23,6 +23,9 @@ Calidad_Aire_Palma2020 <- rename(.data = Calidad_Aire_Palma2020, SO2 = SO2_HI, N
 Calidad_Aire_Palma2020 <- as.data.frame(Calidad_Aire_Palma2020)
 row.names(Calidad_Aire_Palma2020) <- c("Palma")
 
+Calidad_Aire_Palma2020 <- Calidad_Aire_Palma2020 %>%
+  select(PM10, SO2, NO2, NO, O3)
+
 View(Calidad_Aire_Palma2020)
 
 
@@ -34,6 +37,9 @@ Calidad_Aire_Gijon <- Calidad_Aire_Gijon %>% select(-Estacion, -Titulo, -latitud
 
 Calidad_Aire_Gijon <- as.data.frame(Calidad_Aire_Gijon)
 row.names(Calidad_Aire_Gijon) <- c("Gijón")
+
+Calidad_Aire_Gijon <- Calidad_Aire_Gijon %>%
+  select(PM10, SO2, NO2, NO, O3)
 
 View(Calidad_Aire_Gijon)
 
@@ -55,7 +61,7 @@ Calidad_Aire_Cantabria2020$CO <- mean(as.numeric(c(Calidad_Aire_Cantabria2020$..
 Calidad_Aire_Cantabria2020$O3 <- mean(as.numeric(c(Calidad_Aire_Cantabria2020$...7, Calidad_Aire_Cantabria2020$...13, Calidad_Aire_Cantabria2020$...19,Calidad_Aire_Cantabria2020$...25, Calidad_Aire_Cantabria2020$...31, Calidad_Aire_Cantabria2020$...37, Calidad_Aire_Cantabria2020$...43, Calidad_Aire_Cantabria2020$...49, Calidad_Aire_Cantabria2020$...55, Calidad_Aire_Cantabria2020$...61, Calidad_Aire_Cantabria2020$...67)), na.rm = TRUE)
 
 Calidad_Aire_Cantabria2020 <- Calidad_Aire_Cantabria2020 %>%
-  select(PM10, SO2, NO2, NO, CO, O3)
+  select(PM10, SO2, NO2, NO, O3)
 
 row.names(Calidad_Aire_Cantabria2020) <- c("Cantabria")
 
@@ -104,6 +110,9 @@ Calidad_Aire_Madrid_Ajustado <- data.frame(
   
   SO2 = mean(c(Calidad_Aire_Madrid[13, ]$h01, Calidad_Aire_Madrid[13, ]$h02, Calidad_Aire_Madrid[13, ]$h03, Calidad_Aire_Madrid[13, ]$h04, Calidad_Aire_Madrid[13, ]$h05, Calidad_Aire_Madrid[13, ]$h06, Calidad_Aire_Madrid[13, ]$h07, Calidad_Aire_Madrid[13, ]$h08, Calidad_Aire_Madrid[13, ]$h09, Calidad_Aire_Madrid[13, ]$h10, Calidad_Aire_Madrid[13, ]$h11, Calidad_Aire_Madrid[13, ]$h12, Calidad_Aire_Madrid[13, ]$h13, Calidad_Aire_Madrid[13, ]$h14, Calidad_Aire_Madrid[13, ]$h15, Calidad_Aire_Madrid[13, ]$h16, Calidad_Aire_Madrid[13, ]$h17, Calidad_Aire_Madrid[13, ]$h18, Calidad_Aire_Madrid[13, ]$h19, Calidad_Aire_Madrid[13, ]$h20, Calidad_Aire_Madrid[13, ]$h21, Calidad_Aire_Madrid[13, ]$h22, Calidad_Aire_Madrid[13, ]$h23, Calidad_Aire_Madrid[13, ]$h24), na.rm = TRUE))
 
+Calidad_Aire_Madrid_Ajustado <- Calidad_Aire_Madrid_Ajustado %>%
+  select(PM10, SO2, NO2, NO, O3)
+
 row.names(Calidad_Aire_Madrid_Ajustado) <- c("Madrid")
 
 View(Calidad_Aire_Madrid_Ajustado)
@@ -122,5 +131,10 @@ Calidad_Aire_Valencia <- Calidad_Aire_Valencia %>%
 Calidad_Aire_Valencia <- as.data.frame(Calidad_Aire_Valencia)
 row.names(Calidad_Aire_Valencia) <- c("Valencia")
 
+Calidad_Aire_Valencia <- Calidad_Aire_Valencia %>%
+  select(PM10, SO2, NO2, NO, O3)
+
 View(Calidad_Aire_Valencia)
+
+#Tabla calidades aire España
 
