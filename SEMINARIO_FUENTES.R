@@ -192,7 +192,7 @@ print(Altas_Grafico1)
 Grafico_Altas <- ggplot(data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
   geom_bar(stat = "identity", aes(fill = Enfermedades)) +
   labs(title = "Altas por comunidades y por enfermedades")
-
+print(Grafico_Altas)
 
 ##Calidad Aire por comunidades
 
@@ -207,6 +207,8 @@ Grafico_Calidad <- ggplot(data = Calidad_Grafico2, aes(x = CCAA, y = Cantidad)) 
   geom_bar(stat = "identity", aes(fill = Magnitud)) +
   labs(title = "Calidad del aire por magnitudes")
 
+print(Grafico_Calidad)
+
 ##Relación enfermedades respiratorias y calidad aire
 
 Relacion_Respiratorio <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Respiratorio)) +
@@ -215,6 +217,7 @@ Relacion_Respiratorio <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y
                                "#33FFFF")) +
   labs(title = "Relación enfermedades respiratorias y calidad del aire")
 
+print(Relacion_Respiratorio)
 
 ##Relación enfermedades circulatorias y calidad aire
 
@@ -224,6 +227,7 @@ Relacion_Circulatorio <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y
                                "#33FFFF")) +
   labs(title = "Relación enfermedades circulatorias y calidad aire")
 
+print(Relacion_Circulatorio)
 
 ##Relación enfermedades osteomusculares y calidad aire
 
@@ -233,3 +237,4 @@ Relacion_Osteomuscular <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, 
                                "#33FFFF")) +
   labs(title = "Relación enfermedades osteomusculares y calidad aire")
 
+print(Relacion_Osteomuscular)

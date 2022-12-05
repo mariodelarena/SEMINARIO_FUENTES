@@ -16,7 +16,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## [ **Objetivos** ]{style="color: #EEA9B8"}
+## [**Objetivos**]{style="color: #EEA9B8"}
 
 -   Averiguar y demostrar hasta qué punto están relacionadas la calidad del aire con la tasa de hospitalización.
 
@@ -82,6 +82,8 @@ Para llevar a cabo el cálculo, se asigna la peor categoría de los contaminante
 
 Para conocer los problemas de salud y la carga de enfermedad de la población, a parte de la mortalidad, podemos emplear la información de altas hospitalarias que proporcionan los servicios sanitarios y que permite conocer las enfermedades que han originado el mayor número de altas hospitalarias con internamiento.
 
+![Gráfico de altas hospitalarias en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Altas.png)
+
 En este caso, hemos obtenido un .xls que incluye las altas hospitalarias según:
 
 -   Sexo
@@ -97,6 +99,14 @@ En este caso, hemos obtenido un .xls que incluye las altas hospitalarias según:
 En nuestro caso consideramos únicamente a los enfermos dados de alta que hayan ingresado en un centro hospitalario y permanecen, al menos, una noche. El diagnóstico es el diagnóstico principal que aparece en el informe de alta hospitalaria que recibe el paciente y que ha causado su ingreso; clasificándolo de acuerdo a la Clasificación Internacional de Enfermedades.
 
 ## [**Relación**]{style="color: #EEA9B8"}
+
+![Gráfico de la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Calidad.png)
+
+![Gráfico que relaciona las enfermedades respiratorias con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Respiratorio.png)
+
+![Gráfico que relaciona las enfermedades circulatorias con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Circulatorio.png)
+
+![Gráfico que relaciona las enfermedades osteomusculares con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Osteomuscular.png)
 
 ## [**Conclusiones**]{style="color: #EEA9B8"}
 
