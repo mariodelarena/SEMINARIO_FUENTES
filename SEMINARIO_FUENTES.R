@@ -165,6 +165,13 @@ row.names(datos)[row.names(datos) == 1] <- "Cantabria"
 
 View(datos)
 
+#Tabla categórica de la calidad del aire según imagen 2 de markdown
+
+Calidad_Aire_Categórica <- data.frame("CCAA" = c("Baleares","Baleares","Baleares","Baleares", "Asturias","Asturias","Asturias","Asturias", "Cantabria","Cantabria","Cantabria","Cantabria","Valencia","Valencia","Valencia","Valencia", "Madrid","Madrid","Madrid","Madrid"),
+                                      "Magnitud" = c("PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3"),
+                                      "Calidad" = c("Buena", "Buena", "Buena", "Razonablemente buena", "Razonablemente buena", "Buena", "Buena", "Buena", "Buena", "Buena", "Buena", "Buena","Buena", "Buena", "Buena", "Razonablemente buena","Buena", "Buena", "Buena", "Razonablemente buena"))
+
+View(Calidad_Aire_Categórica)
 #Gráficos
 
 ##Altas por comunidad
