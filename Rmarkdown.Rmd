@@ -44,6 +44,34 @@ Comunidades Autónomas empleadas:
 
 ## Calidad del Aire
 
+La calidad del aire se puede definir como la concentración de contaminante que llega a un receptor, más o menos alejado de la fuente de emisión.
+
+Para poder medir la calidad del aire, es necesario conocer el valor del índice de calidad del aire (ICA), que nos indica la contaminación atmosférica y los efectos para la salud.
+
+El Índice de Calidad del Aire (ICA) define seis categorías de calidad del aire, cada una con su código de colores asociado:
+
+-   Buena
+
+-   Razonablemente buena
+
+-   Regular
+
+-   Desfavorable
+
+-   Muy desfavorable
+
+-   Extremadamente desfavorable.
+
+El cálculo se basa en la asignación de la peor categoría de los contaminantes medidos en las estaciones de control de las redes de vigilancia. Estos contaminantes son
+
+-   Partículas en suspensión (PM~10~)
+
+-   Ozono troposférico (O~3~)
+
+-   Dióxido de nitrógeno (NO~2~)
+
+-   Dióxido de azufre (SO~2~)
+
 ## Altas Hospitalarias
 
 ## Relación
