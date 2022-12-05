@@ -1,7 +1,7 @@
 ---
-title: "Calidad_del_Aire_y_Salud_Humana"
-author: "Mario_Mariana_Eira"
-date: "2022-11-09"
+title: "Calidad del Aire y Salud Humana"
+author: "Mario de la Arena, Mariana de Miguel y Eira Rodríguez"
+date: "2022-12-07"
 output: html_document
 ---
 
@@ -9,7 +9,83 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Índice
+
+I.  Objetivos
+II. Comunidades Autónomas
+III. Calidad del Aire
+IV. Altas Hospitalarias
+V.  Relación
+VI. Conclusiones
+VII. Bibliografía
+
+## Objetivos
+
+-   Averiguar y demostrar hasta qué punto están relacionadas la calidad del aire con la tasa de hospitalización.
+
+-   Exponer los tipos de enfermedades que podrían estar causadas por la baja calidad del aire.
+
+-   Explicar como se mide la calidad del aire y lo que podría influir a esta.
+
+## Comunidades Autónomas
+
+![Mapa de España por Comunidades Autónomas.](INPUT/IMAGENES/mapa-espana.jpg)
+
+Comunidades Autónomas empleadas:
+
+-   Palma de Mallorca - Mallorca
+
+-   Gijón - Asturias
+
+-   Cantabria - Cantabria
+
+-   Valencia - Comunidad Valenciana
+
+-   Madrid - Comunidad de Madrid
+
+## Calidad del Aire
+
+La calidad del aire se puede definir como la concentración de contaminante que llega a un receptor, más o menos alejado de la fuente de emisión.
+
+Para poder medir la calidad del aire, es necesario conocer el valor del índice de calidad del aire (ICA), que nos indica la contaminación atmosférica y los efectos para la salud.
+
+El Índice de Calidad del Aire (ICA) define seis categorías de calidad del aire, cada una con su código de colores asociado, un nivel para la salud y el índice de la calidad del aire:
+
+-   Verde: Buena para la salud (ICA de 0 a 50)
+
+-   Amarillo: Moderada (ICA de 51 a 100)
+
+-   Naranja: Dañina a la salud para grupos sensibles (ICA de 101 a 150)
+
+-   Rojo: Dañina a la salud (ICA 151 a 200)
+
+-   Morado: Muy dañina a la salud (ICA 201 a 300)
+
+-   Marrón: Peligrosa (ICA superior a 300)
+
+Para llevar a cabo el cálculo, se asigna la peor categoría de los contaminantes medidos en las estaciones de control de las redes de vigilancia. Estos contaminantes son:
+
+-   Partículas en suspensión (PM~10~)
+
+-   Ozono troposférico (O~3~)
+
+-   Dióxido de nitrógeno (NO~2~)
+
+-   Dióxido de azufre (SO~2~)
+
+## Altas Hospitalarias
+
+## Relación
+
+## Conclusiones
+
+## Bibliografía
+
+<https://www.ine.es/>
+
+<https://datos.gob.es/es/catalogo?tags_es=Aire>
+
+<https://www.fundacionaquae.org/wiki/como-se-mide-calidad-aire/>
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
