@@ -1,7 +1,7 @@
 ---
-title: "Calidad_del_Aire_y_Salud_Humana"
-author: "Mario_Mariana_Eira"
-date: "2022-11-09"
+title: "Calidad del Aire y Salud Humana"
+author: "Mario de la Arena, Mariana de Miguel y Eira Rodríguez"
+date: "2022-12-07"
 output: html_document
 ---
 
@@ -9,7 +9,46 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Índice
+
+I.  Objetivos
+II. Comunidades Autónomas
+III. Calidad del Aire
+IV. Altas Hospitalarias
+V.  Relación
+VI. Conclusiones
+
+## Objetivos
+
+-   Averiguar y demostrar hasta qué punto están relacionadas la calidad del aire con la tasa de hospitalización.
+
+-   Exponer los tipos de enfermedades que podrían estar causadas por la baja calidad del aire.
+
+-   Explicar como se mide la calidad del aire y lo que podría influir a esta.
+
+## Comunidades Autónomas
+
+![Mapa de España por Comunidades Autónomas.](INPUT/IMAGENES/mapa-espana.jpg)
+
+Comunidades Autónomas empleadas:
+
+-   Palma de Mallorca - Mallorca
+
+-   Gijón - Asturias
+
+-   Cantabria - Cantabria
+
+-   Valencia - Comunidad Valenciana
+
+-   Madrid - Comunidad de Madrid
+
+## Calidad del Aire
+
+## Altas Hospitalarias
+
+## Relación
+
+## Conclusiones
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
