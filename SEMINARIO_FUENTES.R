@@ -175,7 +175,7 @@ Calidad_Aire_Categórica <- data.frame("CCAA" = c("Baleares", "Asturias","Cantab
                                       "Altas Circulatorio" = c(Altas_Hospitalarias_Espana$Baleares[1], Altas_Hospitalarias_Espana$Asturias[1], Altas_Hospitalarias_Espana$Cantabria[1], Altas_Hospitalarias_Espana$Valencia[1], Altas_Hospitalarias_Espana$Madrid[1]),
                                       "Altas Osteomuscular" = c(Altas_Hospitalarias_Espana$Baleares[5], Altas_Hospitalarias_Espana$Asturias[5], Altas_Hospitalarias_Espana$Cantabria[5], Altas_Hospitalarias_Espana$Valencia[5], Altas_Hospitalarias_Espana$Madrid[5]))
 
-print(Calidad_Aire_Categórica)
+View(Calidad_Aire_Categórica)
 
 #Gráficos
 
