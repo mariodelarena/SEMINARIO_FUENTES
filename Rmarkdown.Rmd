@@ -103,6 +103,18 @@ En nuestro caso consideramos únicamente a los enfermos dados de alta que hayan 
 
 ## Conclusiones
 
+Tras analizar la relación de los datos de las altas hospitalarias en función de las comunidades autónomas con la calidad del aire de cada una de ellas, analizando las enfermedades por separado:
+
+En cuanto a enfermedades respiratorias y circulatorias:
+
+-   El mayor número de altas se da en Cantabria, que a su vez, el la que presenta la mejor calidad del aire.
+
+En cuanto a enfermedades osteoarticulares:
+
+-   El mayor índice de altas es en Palma de Mallorca y el menor es en Valencia, teniendo ambas una calidad de aire en un rango similar (ICA: Razonablemente Buena).
+
+En resumen, en estas tablas no hemos encontrado una relación evidente entre la calidad del aire de una comunidad y la salud de sus habitantes. Esto puede ser debido a que los datos que hemos seleccionado no sean los más adecuados porque no representan una población real, no hemos abarcado todas las magnitudes que definen la calidad del aire, o bien, la influencia del Covid-19, ya que el análisis lo hemos realizado con datos del año 2020, por lo que los resultados esperados pueden haberse visto afectados. Por lo tanto, los resultados que hemos obtenido tras este estudio no son aquellos que esperábamos.
+
 ## Bibliografía
 
 <https://www.ine.es/>
