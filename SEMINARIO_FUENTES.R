@@ -189,7 +189,7 @@ colnames(Altas_Grafico1)[colnames(Altas_Grafico1) == "Año 2020"] <- "Enfermedad
 
 print(Altas_Grafico1)
 
-ggplot(data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
+Grafico_Altas <- ggplot(data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
   geom_bar(stat = "identity", aes(fill = Enfermedades)) +
   labs(title = "Altas por comunidades y por enfermedades")
 
@@ -203,13 +203,13 @@ Calidad_Grafico2$CCAA <- c("Palma", "Palma", "Palma", "Palma", "Palma","Gijon", 
 
 print(Calidad_Grafico2)
 
-ggplot(data = Calidad_Grafico2, aes(x = CCAA, y = Cantidad)) +
+Grafico_Calidad <- ggplot(data = Calidad_Grafico2, aes(x = CCAA, y = Cantidad)) +
   geom_bar(stat = "identity", aes(fill = Magnitud)) +
   labs(title = "Calidad del aire por magnitudes")
 
 ##Relación enfermedades respiratorias y calidad aire
 
-ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Respiratorio)) +
+Relacion_Respiratorio <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Respiratorio)) +
   geom_bar(stat = "identity", aes(fill = Calidad)) +
   scale_fill_manual(values = c("green",
                                "#33FFFF")) +
@@ -218,7 +218,7 @@ ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Respiratorio)) +
 
 ##Relación enfermedades circulatorias y calidad aire
 
-ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Circulatorio)) +
+Relacion_Circulatorio <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Circulatorio)) +
   geom_bar(stat = "identity", aes(fill = Calidad)) +
   scale_fill_manual(values = c("green",
                                "#33FFFF")) +
@@ -227,7 +227,7 @@ ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Circulatorio)) +
 
 ##Relación enfermedades osteomusculares y calidad aire
 
-ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Osteomuscular)) +
+Relacion_Osteomuscular <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Osteomuscular)) +
   geom_bar(stat = "identity", aes(fill = Calidad)) +
   scale_fill_manual(values = c("green",
                                "#33FFFF")) +
