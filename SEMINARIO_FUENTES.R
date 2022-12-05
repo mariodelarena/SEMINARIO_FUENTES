@@ -152,3 +152,20 @@ datos <- rbind(datos, datos_Madrid)
 row.names(datos)[row.names(datos) == 1] <- "Cantabria"
 
 View(datos)
+
+#Gráficos
+
+##Altas por comunidad
+
+###Ajuste tabla
+Altas_Grafico1 <- Altas_Hospitalarias_Espana %>%
+  pivot_longer(Asturias:Madrid, names_to = "CCAA", values_to = "Numero altas")
+Altas_Grafico1$`Numero altas` <- as.numeric(Altas_Grafico1$`Numero altas`)
+colnames(Altas_Grafico1)[colnames(Altas_Grafico1) == "Año 2020"] <- "Enfermedades"
+print(Altas_Grafico1)
+
+plot(Altas_Grafico1$`Numero altas`)
+  
+  
+  data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
+  geom_bar()
