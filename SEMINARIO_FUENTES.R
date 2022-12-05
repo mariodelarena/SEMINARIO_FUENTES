@@ -10,6 +10,18 @@ Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana %>% select(1, 16, 17, 2
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(1,2,3,4,12,26,29,32,39,45,48,49,61,70,91,95,106,117,126,129,130,135,152 ),]
 Altas_Hospitalarias_Espana <- rename(.data = Altas_Hospitalarias_Espana, Asturias = ...16, Baleares = ...17, Cantabria = ...21, Valencia = ...46, Madrid = ...55)
 Altas_Hospitalarias_Espana <- Altas_Hospitalarias_Espana[c(12:21),]
+Altas_Hospitalarias_Espana[1, 1] <- "Enfermedades circulatorias"
+Altas_Hospitalarias_Espana[2, 1] <- "Enfermedades respiratorias"
+Altas_Hospitalarias_Espana[3, 1] <- "Enfermedades digestivas"
+Altas_Hospitalarias_Espana[4, 1] <- "Enfermedades de la piel"
+Altas_Hospitalarias_Espana[5, 1] <- "Enfermedades osteomusculares"
+Altas_Hospitalarias_Espana[6, 1] <- "Enfermedades genitourinario"
+Altas_Hospitalarias_Espana[7, 1] <- "Complicaciones del embarazo"
+Altas_Hospitalarias_Espana[8, 1] <- "Enfermedades perinatales"
+Altas_Hospitalarias_Espana[9, 1] <- "Anomalías congénitas"
+Altas_Hospitalarias_Espana[10, 1] <- "No clasificadas"
+
+
 
 View(Altas_Hospitalarias_Espana)
 
@@ -179,3 +191,6 @@ print(Calidad_Grafico2)
 
 ggplot(data = Calidad_Grafico2, aes(x = CCAA, y = Cantidad)) +
   geom_bar(stat = "identity", aes(fill = Magnitud))
+
+##Relación enfermedades respiratorias y calidad aire
+
