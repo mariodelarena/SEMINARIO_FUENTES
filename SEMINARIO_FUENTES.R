@@ -164,7 +164,16 @@ Altas_Grafico1$`Numero altas` <- as.numeric(Altas_Grafico1$`Numero altas`)
 colnames(Altas_Grafico1)[colnames(Altas_Grafico1) == "Año 2020"] <- "Enfermedades"
 print(Altas_Grafico1)
 
-plot(Altas_Grafico1$`Numero altas`)
+ggplot(data = Altas_Grafico1, aes(x = CCAA)) +
+  geom_bar(aes(colour = Enfermedad))
+
+
+ggplot(data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
+  geom_bar()
+
+
+
+plot(Altas_Grafico1$Enfermedades)
   
   
   data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
