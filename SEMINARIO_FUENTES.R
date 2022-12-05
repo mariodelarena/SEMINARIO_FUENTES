@@ -163,12 +163,19 @@ Altas_Grafico1 <- Altas_Hospitalarias_Espana %>%
 Altas_Grafico1$`Numero altas` <- as.numeric(Altas_Grafico1$`Numero altas`)
 colnames(Altas_Grafico1)[colnames(Altas_Grafico1) == "Año 2020"] <- "Enfermedades"
 
-
 print(Altas_Grafico1)
-
 
 ggplot(data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
   geom_bar(stat = "identity", aes(fill = Enfermedades))
 
+##Calidad Aire por comunidades
 
+###Ajuste tabla
+Calidad_Grafico2 <-datos %>%
+  pivot_longer(PM10:O3, names_to = "Magnitud", values_to = "Cantidad")
+Calidad_Grafico2$CCAA <- c("Palma", "Palma", "Palma", "Palma", "Palma","Gijon", "Gijon", "Gijon", "Gijon", "Gijon","Cantabria", "Cantabria", "Cantabria", "Cantabria", "Cantabria","Valencia", "Valencia", "Valencia", "Valencia", "Valencia","Madrid", "Madrid", "Madrid", "Madrid", "Madrid")
 
+print(Calidad_Grafico2)
+
+ggplot(data = Calidad_Grafico2, aes(x = CCAA, y = Cantidad)) +
+  geom_bar(stat = "identity", aes(fill = Magnitud))
