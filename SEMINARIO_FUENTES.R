@@ -1,6 +1,7 @@
 library(readxl)
 library(readr)
 library(dplyr)
+library(tidyverse)
 
 #Tabla de Altas Hospitalarias
 Altas_Hospitalarias_Espana <- read_excel("INPUT/DATA/Altas_Hospitalarias.xls")
@@ -138,3 +139,14 @@ View(Calidad_Aire_Valencia)
 
 #Tabla calidades aire España
 
+datos_Palma <- data.frame(Calidad_Aire_Palma2020)
+datos_Gijon <- data.frame(Calidad_Aire_Gijon)
+datos_Cantabria <- data.frame(Calidad_Aire_Cantabria2020)
+datos_Valencia <- data.frame(Calidad_Aire_Valencia)
+datos_Madrid <- data.frame(Calidad_Aire_Madrid_Ajustado)
+datos <- rbind(datos_Palma, datos_Gijon)
+datos <- rbind(datos, datos_Cantabria)
+datos <- rbind(datos, datos_Valencia)
+datos <- rbind(datos, datos_Madrid)
+
+View(datos)
