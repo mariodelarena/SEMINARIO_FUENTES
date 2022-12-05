@@ -42,6 +42,7 @@ Calidad_Aire_Palma2020 <- Calidad_Aire_Palma2020 %>%
 View(Calidad_Aire_Palma2020)
 
 
+
 #Tabla de la calidad del aire de Gijón
 Calidad_Aire_Gijon <- read_delim("INPUT/DATA/Calidad_Aire_Gijon.csv", 
                                  delim = ";", escape_double = FALSE, trim_ws = TRUE)
@@ -165,13 +166,17 @@ row.names(datos)[row.names(datos) == 1] <- "Cantabria"
 
 View(datos)
 
+
 #Tabla categórica de la calidad del aire según imagen 2 de markdown
 
-Calidad_Aire_Categórica <- data.frame("CCAA" = c("Baleares","Baleares","Baleares","Baleares", "Asturias","Asturias","Asturias","Asturias", "Cantabria","Cantabria","Cantabria","Cantabria","Valencia","Valencia","Valencia","Valencia", "Madrid","Madrid","Madrid","Madrid"),
-                                      "Magnitud" = c("PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3","PM10", "SO2", "NO2", "O3"),
-                                      "Calidad" = c("Buena", "Buena", "Buena", "Razonablemente buena", "Razonablemente buena", "Buena", "Buena", "Buena", "Buena", "Buena", "Buena", "Buena","Buena", "Buena", "Buena", "Razonablemente buena","Buena", "Buena", "Buena", "Razonablemente buena"))
+Calidad_Aire_Categórica <- data.frame("CCAA" = c("Baleares", "Asturias","Cantabria","Valencia","Madrid"),
+                                      "Calidad" = c("Razonablemente buena", "Razonablemente buena", "Buena", "Razonablemente buena", "Razonablemente buena"),
+                                      "Altas Respiratorio" = c(Altas_Hospitalarias_Espana$Baleares[2], Altas_Hospitalarias_Espana$Asturias[2], Altas_Hospitalarias_Espana$Cantabria[2], Altas_Hospitalarias_Espana$Valencia[2], Altas_Hospitalarias_Espana$Madrid[2]), 
+                                      "Altas Circulatorio" = c(Altas_Hospitalarias_Espana$Baleares[1], Altas_Hospitalarias_Espana$Asturias[1], Altas_Hospitalarias_Espana$Cantabria[1], Altas_Hospitalarias_Espana$Valencia[1], Altas_Hospitalarias_Espana$Madrid[1]),
+                                      "Altas Osteomuscular" = c(Altas_Hospitalarias_Espana$Baleares[5], Altas_Hospitalarias_Espana$Asturias[5], Altas_Hospitalarias_Espana$Cantabria[5], Altas_Hospitalarias_Espana$Valencia[5], Altas_Hospitalarias_Espana$Madrid[5]))
 
-View(Calidad_Aire_Categórica)
+print(Calidad_Aire_Categórica)
+
 #Gráficos
 
 ##Altas por comunidad
@@ -197,7 +202,26 @@ Calidad_Grafico2$CCAA <- c("Palma", "Palma", "Palma", "Palma", "Palma","Gijon", 
 print(Calidad_Grafico2)
 
 ggplot(data = Calidad_Grafico2, aes(x = CCAA, y = Cantidad)) +
-  geom_bar(stat = "identity", aes(fill = Magnitud))
+  geom_bar(stat = "identity", aes(fill = Magnitud)) +
+  labs(title = "Calidad del aire por magnitudes")
 
 ##Relación enfermedades respiratorias y calidad aire
 
+ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Respiratorio)) +
+  geom_bar(stat = "identity", aes(fill = Calidad)) +
+  scale_fill_manual(values = c("green",
+                               "#33FFFF"))
+
+##Relación enfermedades circulatorias y calidad aire
+
+ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Circulatorio)) +
+  geom_bar(stat = "identity", aes(fill = Calidad)) +
+  scale_fill_manual(values = c("green",
+                               "#33FFFF"))
+
+##Relación enfermedades osteomusculares y calidad aire
+
+ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Osteomuscular)) +
+  geom_bar(stat = "identity", aes(fill = Calidad)) +
+  scale_fill_manual(values = c("green",
+                               "#33FFFF"))
