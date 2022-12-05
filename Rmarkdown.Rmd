@@ -45,9 +45,13 @@ Comunidades Autónomas empleadas:
 
 ## Calidad del Aire
 
+#### Introducción
+
 La calidad del aire se puede definir como la concentración de contaminante que llega a un receptor, más o menos alejado de la fuente de emisión.
 
 Para poder medir la calidad del aire, es necesario conocer el valor del índice de calidad del aire (ICA), que nos indica la contaminación atmosférica y los efectos para la salud.
+
+#### Clasificación
 
 El Índice de Calidad del Aire (ICA) define seis categorías de calidad del aire, cada una con su código de colores asociado, un nivel para la salud y el índice de la calidad del aire:
 
@@ -73,7 +77,27 @@ Para llevar a cabo el cálculo, se asigna la peor categoría de los contaminante
 
 -   Dióxido de azufre (SO~2~)
 
+![Tabla de clasificación de la Calidad del Aire.](INPUT/IMAGENES/ICA.png){width="457" height="312"}
+
 ## Altas Hospitalarias
+
+#### Introducción
+
+Para conocer los problemas de salud y la carga de enfermedad de la población, a parte de la mortalidad, podemos emplear la información de altas hospitalarias que proporcionan los servicios sanitarios y que permite conocer las enfermedades que han originado el mayor número de altas hospitalarias con internamiento.
+
+En este caso, hemos obtenido un .xls que incluye las altas hospitalarias según:
+
+-   Sexo
+
+-   Diagnóstico principal
+
+-   Provincia
+
+-   Comunidad Autónoma
+
+-   Ciudad Autónoma
+
+En nuestro caso consideramos únicamente a los enfermos dados de alta que hayan ingresado en un centro hospitalario y permanecen, al menos, una noche. El diagnóstico es el diagnóstico principal que aparece en el informe de alta hospitalaria que recibe el paciente y que ha causado su ingreso; clasificándolo de acuerdo a la Clasificación Internacional de Enfermedades.
 
 ## Relación
 
@@ -85,7 +109,11 @@ Para llevar a cabo el cálculo, se asigna la peor categoría de los contaminante
 
 <https://datos.gob.es/es/catalogo?tags_es=Aire>
 
+<https://datos.gob.es/gl/catalogo/l01330241-calidad-de-aire-datos-ano-2020>
+
 <https://www.fundacionaquae.org/wiki/como-se-mide-calidad-aire/>
+
+<https://www.meteogalicia.gal/datosred/infoweb/caire/informes/MANUALES/ES/IT_31_CALCULO_DO_ICA.pdf>
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
