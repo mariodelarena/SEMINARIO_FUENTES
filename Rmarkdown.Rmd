@@ -29,8 +29,6 @@ VII. Bibliografía
 
 ## Comunidades Autónomas
 
-![Mapa de España por Comunidades Autónomas.](INPUT/IMAGENES/mapa-espana.jpg)
-
 Comunidades Autónomas empleadas:
 
 -   Palma de Mallorca - Mallorca
@@ -42,6 +40,8 @@ Comunidades Autónomas empleadas:
 -   Valencia - Comunidad Valenciana
 
 -   Madrid - Comunidad de Madrid
+
+![Mapa de España por Comunidades Autónomas.](INPUT/IMAGENES/mapa-espana.jpg)
 
 ## Calidad del Aire
 
