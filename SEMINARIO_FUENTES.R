@@ -190,7 +190,9 @@ colnames(Altas_Grafico1)[colnames(Altas_Grafico1) == "Año 2020"] <- "Enfermedad
 print(Altas_Grafico1)
 
 ggplot(data = Altas_Grafico1, aes(x = CCAA, y = `Numero altas`)) +
-  geom_bar(stat = "identity", aes(fill = Enfermedades))
+  geom_bar(stat = "identity", aes(fill = Enfermedades)) +
+  labs(title = "Altas por comunidades y por enfermedades")
+
 
 ##Calidad Aire por comunidades
 
@@ -210,18 +212,24 @@ ggplot(data = Calidad_Grafico2, aes(x = CCAA, y = Cantidad)) +
 ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Respiratorio)) +
   geom_bar(stat = "identity", aes(fill = Calidad)) +
   scale_fill_manual(values = c("green",
-                               "#33FFFF"))
+                               "#33FFFF")) +
+  labs(title = "Relación enfermedades respiratorias y calidad del aire")
+
 
 ##Relación enfermedades circulatorias y calidad aire
 
 ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Circulatorio)) +
   geom_bar(stat = "identity", aes(fill = Calidad)) +
   scale_fill_manual(values = c("green",
-                               "#33FFFF"))
+                               "#33FFFF")) +
+  labs(title = "Relación enfermedades circulatorias y calidad aire")
+
 
 ##Relación enfermedades osteomusculares y calidad aire
 
 ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y = Altas.Osteomuscular)) +
   geom_bar(stat = "identity", aes(fill = Calidad)) +
   scale_fill_manual(values = c("green",
-                               "#33FFFF"))
+                               "#33FFFF")) +
+  labs(title = "Relación enfermedades osteomusculares y calidad aire")
+
