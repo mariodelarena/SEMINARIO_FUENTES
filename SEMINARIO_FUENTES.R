@@ -149,4 +149,6 @@ datos <- rbind(datos, datos_Cantabria)
 datos <- rbind(datos, datos_Valencia)
 datos <- rbind(datos, datos_Madrid)
 
+row.names(datos)[row.names(datos) == 1] <- "Cantabria"
+
 View(datos)
