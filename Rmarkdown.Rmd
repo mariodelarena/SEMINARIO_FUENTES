@@ -1,25 +1,22 @@
 ---
-title: "Calidad del Aire y Salud Humana"
+title: <FONT COLOR = "#8B636C"> Calidad del Aire y Salud Humana </FONT>
 author: "Mario de la Arena, Mariana de Miguel y Eira Rodríguez"
 date: "2022-12-07"
-output: html_document
+output:
+  html_document:  
+    df_print: paged
+    theme: readable
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Índice
-
-I.  Objetivos
-II. Comunidades Autónomas
-III. Calidad del Aire
-IV. Altas Hospitalarias
-V.  Relación
-VI. Conclusiones
-VII. Bibliografía
-
-## Objetivos
+## [**Objetivos**]{style="color: #EEA9B8"}
 
 -   Averiguar y demostrar hasta qué punto están relacionadas la calidad del aire con la tasa de hospitalización.
 
@@ -27,7 +24,7 @@ VII. Bibliografía
 
 -   Explicar como se mide la calidad del aire y lo que podría influir a esta.
 
-## Comunidades Autónomas
+## [**Comunidades Autónomas**]{style="color: #EEA9B8"}
 
 Comunidades Autónomas empleadas:
 
@@ -43,15 +40,15 @@ Comunidades Autónomas empleadas:
 
 ![Mapa de España por Comunidades Autónomas.](INPUT/IMAGENES/mapa-espana.jpg)
 
-## Calidad del Aire
+## [**Calidad del Aire**]{style="color: #EEA9B8"}
 
-#### Introducción
+### [Introducción]{style="color: #FFC0CB"}
 
 La calidad del aire se puede definir como la concentración de contaminante que llega a un receptor, más o menos alejado de la fuente de emisión.
 
 Para poder medir la calidad del aire, es necesario conocer el valor del índice de calidad del aire (ICA), que nos indica la contaminación atmosférica y los efectos para la salud.
 
-#### Clasificación
+### [Clasificación]{style="color: #FFC0CB"}
 
 El Índice de Calidad del Aire (ICA) define seis categorías de calidad del aire, cada una con su código de colores asociado, un nivel para la salud y el índice de la calidad del aire:
 
@@ -79,11 +76,13 @@ Para llevar a cabo el cálculo, se asigna la peor categoría de los contaminante
 
 ![Tabla de clasificación de la Calidad del Aire.](INPUT/IMAGENES/ICA.png){width="457" height="312"}
 
-## Altas Hospitalarias
+## [**Altas Hospitalarias**]{style="color: #EEA9B8"}
 
-#### Introducción
+#### [Introducción]{style="color: #FFC0CB"}
 
 Para conocer los problemas de salud y la carga de enfermedad de la población, a parte de la mortalidad, podemos emplear la información de altas hospitalarias que proporcionan los servicios sanitarios y que permite conocer las enfermedades que han originado el mayor número de altas hospitalarias con internamiento.
+
+![Gráfico de altas hospitalarias en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Altas.png)
 
 En este caso, hemos obtenido un .xls que incluye las altas hospitalarias según:
 
@@ -99,11 +98,31 @@ En este caso, hemos obtenido un .xls que incluye las altas hospitalarias según:
 
 En nuestro caso consideramos únicamente a los enfermos dados de alta que hayan ingresado en un centro hospitalario y permanecen, al menos, una noche. El diagnóstico es el diagnóstico principal que aparece en el informe de alta hospitalaria que recibe el paciente y que ha causado su ingreso; clasificándolo de acuerdo a la Clasificación Internacional de Enfermedades.
 
-## Relación
+## [**Relación**]{style="color: #EEA9B8"}
 
-## Conclusiones
+![Gráfico de la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Calidad.png)
 
-## Bibliografía
+![Gráfico que relaciona las enfermedades respiratorias con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Respiratorio.png)
+
+![Gráfico que relaciona las enfermedades circulatorias con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Circulatorio.png)
+
+![Gráfico que relaciona las enfermedades osteomusculares con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Osteomuscular.png)
+
+## [**Conclusiones**]{style="color: #EEA9B8"}
+
+Tras analizar la relación de los datos de las altas hospitalarias en función de las comunidades autónomas con la calidad del aire de cada una de ellas, analizando las enfermedades por separado:
+
+Enfermedades respiratorias y circulatorias:
+
+-   El mayor número de altas se da en Cantabria, que a su vez, es la que presenta la mejor calidad del aire.
+
+Enfermedades osteoarticulares:
+
+-   El mayor índice de altas es en Palma de Mallorca y el menor es en Valencia, teniendo ambas una calidad de aire en un rango similar (ICA: Razonablemente Buena).
+
+En resumen, en estas tablas no hemos encontrado una relación evidente entre la calidad del aire de una comunidad y la salud de sus habitantes. Esto puede ser debido a que los datos que hemos seleccionado no sean los más adecuados porque no representan una población real, no hemos abarcado todas las magnitudes que definen la calidad del aire, o bien, la influencia del Covid-19, ya que el análisis lo hemos realizado con datos del año 2020, por lo que los resultados esperados pueden haberse visto afectados. Por lo tanto, los resultados que hemos obtenido tras este estudio no son aquellos que esperábamos.
+
+## [**Bibliografía**]{style="color: #EEA9B8"}
 
 <https://www.ine.es/>
 
