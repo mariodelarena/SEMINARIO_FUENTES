@@ -214,7 +214,7 @@ Relacion_Respiratorio <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y
   scale_fill_manual(values = c("green",
                                "#33FFFF")) +
   labs(title = "Relación enfermedades respiratorias y calidad del aire")
-
+print(Relacion_Respiratorio)
 
 ##Relación enfermedades circulatorias y calidad aire
 
@@ -223,6 +223,7 @@ Relacion_Circulatorio <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, y
   scale_fill_manual(values = c("green",
                                "#33FFFF")) +
   labs(title = "Relación enfermedades circulatorias y calidad aire")
+print(Relacion_Circulatorio)
 
 
 ##Relación enfermedades osteomusculares y calidad aire
@@ -233,3 +234,4 @@ Relacion_Osteomuscular <- ggplot(data = Calidad_Aire_Categórica, aes(x = CCAA, 
                                "#33FFFF")) +
   labs(title = "Relación enfermedades osteomusculares y calidad aire")
 
+print(Relacion_Osteomuscular)
