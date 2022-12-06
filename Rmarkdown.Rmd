@@ -48,6 +48,8 @@ La calidad del aire se puede definir como la concentración de contaminante que 
 
 Para poder medir la calidad del aire, es necesario conocer el valor del índice de calidad del aire (ICA), que nos indica la contaminación atmosférica y los efectos para la salud.
 
+![Gráfico de la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Calidad.png)
+
 ### [Clasificación]{style="color: #FFC0CB"}
 
 El Índice de Calidad del Aire (ICA) define seis categorías de calidad del aire, cada una con su código de colores asociado, un nivel para la salud y el índice de la calidad del aire:
@@ -100,8 +102,6 @@ En nuestro caso consideramos únicamente a los enfermos dados de alta que hayan 
 
 ## [**Relación**]{style="color: #EEA9B8"}
 
-![Gráfico de la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Calidad.png)
-
 ![Gráfico que relaciona las enfermedades respiratorias con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Respiratorio.png)
 
 ![Gráfico que relaciona las enfermedades circulatorias con la calidad del aire en diferentes comunidades autónomas.](INPUT/IMAGENES/Grafico_Circulatorio.png)
@@ -133,5 +133,3 @@ En resumen, en estas tablas no hemos encontrado una relación evidente entre la 
 <https://www.fundacionaquae.org/wiki/como-se-mide-calidad-aire/>
 
 <https://www.meteogalicia.gal/datosred/infoweb/caire/informes/MANUALES/ES/IT_31_CALCULO_DO_ICA.pdf>
-
-
